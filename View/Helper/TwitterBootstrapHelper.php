@@ -546,10 +546,11 @@ class TwitterBootstrapHelper extends AppHelper {
 		if (!empty($size) && in_array($size, $valid_sizes)) {
 			$class .= " btn-{$size}";
 		}
-		if ($disabled) { $class .= " btn-disabled"; }
+//		if ($disabled) { $class .= " btn-disabled"; }
 		unset($options["style"]);
 		unset($options["size"]);
-		unset($options["disabled"]);
+//		unset($options["disabled"]);
+		if ($disabled) { $options['disabled'] = 'disabled'; }
 		if (isset($options["class"])) {
 			$options["class"] = $options["class"] . " " . $class;
 		} else {
